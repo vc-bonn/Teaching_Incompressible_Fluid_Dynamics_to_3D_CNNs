@@ -118,4 +118,4 @@ If there are questions left, just contact us: wandeln@cs.uni-bonn.de
 
 Our U-Net implementation follows the architecture described in:  
 [3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](https://arxiv.org/abs/1606.06650)  
-*Özgün Çiçek, Ahmed Abdulkadir, Soeren S. Lienkamp, Thomas Brox, Olaf Ronneberger*, CVPR, 2016
+*Özgün Çiçek, Ahmed Abdulkadir, Soeren S. Lienkamp, Thomas Brox, Olaf Ronneberger*, MICCAI, 2016
