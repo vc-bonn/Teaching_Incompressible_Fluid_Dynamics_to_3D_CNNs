@@ -7,11 +7,11 @@ Then, this is the right repository for you! :)
 
 Here are some examples that were generated using a single neural surrogate model:  
 
-![image](imgs/cover_imgs/reynolds_large_legend_1_mu_5_rho_0_2_v_1.png){:height="50%" width="50%"}
-![image](imgs/cover_imgs/reynolds_large_legend_3_2_mu_0_2_rho_1_v_1.png){:height="50%" width="50%"}
-![image](imgs/cover_imgs/reynolds_large_legend_6_mu_0_02_rho_10_v_1.png){:height="50%" width="50%"}
-![image](imgs/cover_imgs/magnus_large_legend_mu_0_5_rho_1_v_1.png){:height="50%" width="50%"}
-![image](imgs/cover_imgs/3_obj_large_legend_2_mu_0_5_rho_1_v_1.png){:height="50%" width="50%"}
+![image](imgs/cover_imgs/reynolds_large_legend_1_mu_5_rho_0_2_v_1.png)
+![image](imgs/cover_imgs/reynolds_large_legend_3_2_mu_0_2_rho_1_v_1.png)
+![image](imgs/cover_imgs/reynolds_large_legend_6_mu_0_02_rho_10_v_1.png)
+![image](imgs/cover_imgs/magnus_large_legend_mu_0_5_rho_1_v_1.png)
+![image](imgs/cover_imgs/3_obj_large_legend_2_mu_0_5_rho_1_v_1.png)
 
 In this repository, we show, how you can "teach" the incompressible Navier Stokes equations to fast neural surrogate models (e.g. a U-Net) using different time integration schemes (explicit / implicit / IMEX) on a Marker And Cell (MAC) grid.
 
