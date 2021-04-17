@@ -5,14 +5,16 @@ Do you want to perform some cool fluid simulations in 3D with CNNs?
 Do you want to train your own fluid models without having to worry about ground truth data?  
 Then, this is the right repository for you! :)  
 
-In this repository, we show, how you can "teach" different time integration schemes (explicit / implicit / IMEX) for the incompressible Navier Stokes equations to fast neural surrogate models (here, we use a U-Net) on a Marker And Cell (MAC) grid.
+Here are some examples:  
 
-![image](imgs/cover_imgs/reynolds_large_legend_6_mu_0_02_rho_10_v_1.png)
-![image](imgs/cover_imgs/reynolds_large_legend_3_mu_0_2_rho_1_v_1.png)
 ![image](imgs/cover_imgs/reynolds_large_legend_1_mu_5_rho_0_2_v_1.png)
+![image](imgs/cover_imgs/reynolds_large_legend_3_2_mu_0_2_rho_1_v_1.png)
 ![image](imgs/cover_imgs/reynolds_large_legend_4_mu_0_1_rho_5_v_1.png)
+![image](imgs/cover_imgs/reynolds_large_legend_6_mu_0_02_rho_10_v_1.png)
 ![image](imgs/cover_imgs/magnus_large_legend_mu_0_5_rho_1_v_1.png)
 ![image](imgs/cover_imgs/3_obj_large_legend_2_mu_0_5_rho_1_v_1.png)
+
+In this repository, we show, how you can "teach" the incompressible Navier Stokes equations to fast neural surrogate models (e.g. a U-Net) using different time integration schemes (explicit / implicit / IMEX) on a Marker And Cell (MAC) grid.
 
 ## Publications
 This repository complements our paper on:  
@@ -44,21 +46,21 @@ If you have troubles with cuda (e.g. because you don't have a GPU at hand), use 
 
 ## Interactive Demo
 
-We provide you with a pretrained "pruned U-Net" model and a pretrained U-Net model so you can directly begin with some fluid simulations. In the following, we show, how you can play around with our interactive real-time demo.  
+We provide you with a pretrained "pruned U-Net" model and a pretrained U-Net model so you can directly "dive into" some fluid simulations.  
 
 To start the interactive demo using the pretrained pruned U-Net, run:  
 ```
 python demo_interactive.py --dt=4 --net=pruned_UNet
 ```
 
-If you want to use our pretrained, more accurate (but slightly slower) U-Net, you first need to download the model from [Google Drive](https://drive.google.com/file/d/1HUYiye1SEc0anrTUDLyfJOT6R7sh92UA/view?usp=sharing) since the model is larger then 100 MiB and thus could not be uploaded on GitHub. Then, copy the .state-file into the following folder:  
+If you want to use our pretrained, more accurate "full" U-Net, you first need to download the model from [Google Drive](https://drive.google.com/file/d/1HUYiye1SEc0anrTUDLyfJOT6R7sh92UA/view?usp=sharing) since the model is larger then 100 MiB and thus cannot be uploaded on GitHub. Then, copy the .state-file into the following folder:  
 /Logger/net UNet; hs 15; dt 4.0/2021-01-28 17:26:17/states/  
 ... and run:  
 ```
 python demo_interactive.py --dt=4 --net=UNet
 ```
 
-The demo will open windows for the velocity and pressure fields averaged along the x,y and z axis.  
+The demo will open windows for the velocity and pressure fields averaged along the x,y and z axis respectively.  
 
 By pressing the following keys, you can:
 
@@ -72,16 +74,16 @@ There are several possibilities to interact with the fluid:
 - The following keyboard commands can be used to:  
 "x": increase the flow speed  
 "y": decrease the flow speed  
-"v": increase the fluid's density  
-"c": decrease the fluid's density  
-"f": increase the fluid's viscosity  
-"d": decrease the fluid's viscosity  
+"v": increase the fluid's density rho  
+"c": decrease the fluid's density rho  
+"f": increase the fluid's viscosity mu  
+"d": decrease the fluid's viscosity mu  
 "s": increase the angular velocity (only for spinning objects)  
 "a": decrease the angular velocity (only for spinning objects)  
 
 ## Train your own models
 
-If you want to train you own models, you can call e.g.:  
+If you want to train you own models, you can call for example:  
 ```
 python train.py --dt=4 --net=UNet --batch_size=10 --lr=0.001 --integrator=imex
 ```
