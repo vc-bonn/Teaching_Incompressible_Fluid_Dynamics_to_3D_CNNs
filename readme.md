@@ -5,7 +5,7 @@ Do you want to perform some cool fluid simulations in 3D with CNNs?
 Do you want to train your own fluid models without having to worry about ground truth data?  
 Then, this is the right repository for you! :)  
 
-Here are some examples that were generated using a single neural surrogate model:  
+Here are some example results that were all generated using the same neural surrogate model:  
 
 ![image](imgs/cover_imgs/reynolds_large_legend_1_mu_5_rho_0_2_v_1.png)
 ![image](imgs/cover_imgs/reynolds_large_legend_3_2_mu_0_2_rho_1_v_1.png)
@@ -52,7 +52,7 @@ To start the interactive demo using the pretrained pruned U-Net, run:
 python demo_interactive.py --dt=4 --net=pruned_UNet
 ```
 
-If you want to use our pretrained, more accurate "full" U-Net, you first need to download the model from [Google Drive](https://drive.google.com/file/d/1HUYiye1SEc0anrTUDLyfJOT6R7sh92UA/view?usp=sharing) since the model is larger then 100 MiB and thus cannot be uploaded on GitHub. Then, copy the .state-file into the following folder:  
+If you want to use our pretrained, more accurate "full" U-Net (which was used to produce the results shown above), you first need to download the model from [Google Drive](https://drive.google.com/file/d/1HUYiye1SEc0anrTUDLyfJOT6R7sh92UA/view?usp=sharing) since the model is larger then 100 MiB and thus cannot be uploaded on GitHub. Then, copy the .state-file into the following folder:  
 /Logger/net UNet; hs 15; dt 4.0/2021-01-28 17:26:17/states/  
 ... and run:  
 ```
