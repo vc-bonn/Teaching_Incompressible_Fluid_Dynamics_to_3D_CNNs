@@ -4,3 +4,4 @@ imgs/**
 vtk/**
 movies/**
 !/imgs/cover_imgs
+!/imgs/cover_imgs/**
