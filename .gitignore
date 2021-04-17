@@ -3,4 +3,5 @@ Logs/**
 imgs/**
 vtk/**
 movies/**
-!imgs/cover_imgs/3_obj_large_legend_2_mu_0_5_rho_1_v_1.png
+!/imgs/cover_imgs/3_obj_large_legend_2_mu_0_5_rho_1_v_1.png
+!*/imgs/cover_imgs/*
