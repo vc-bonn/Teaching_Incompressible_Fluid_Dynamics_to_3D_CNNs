@@ -9,7 +9,6 @@ Here are some examples:
 
 ![image](imgs/cover_imgs/reynolds_large_legend_1_mu_5_rho_0_2_v_1.png)
 ![image](imgs/cover_imgs/reynolds_large_legend_3_2_mu_0_2_rho_1_v_1.png)
-![image](imgs/cover_imgs/reynolds_large_legend_4_mu_0_1_rho_5_v_1.png)
 ![image](imgs/cover_imgs/reynolds_large_legend_6_mu_0_02_rho_10_v_1.png)
 ![image](imgs/cover_imgs/magnus_large_legend_mu_0_5_rho_1_v_1.png)
 ![image](imgs/cover_imgs/3_obj_large_legend_2_mu_0_5_rho_1_v_1.png)
