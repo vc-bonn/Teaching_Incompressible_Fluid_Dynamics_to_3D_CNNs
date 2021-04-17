@@ -3,3 +3,4 @@ Logs/**
 imgs/**
 vtk/**
 movies/**
+!imgs/cover_imgs/**
