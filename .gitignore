@@ -1,6 +1,5 @@
 __pycache__/**
 Logs/**
-imgs/**
 vtk/**
 movies/**
 !/imgs/cover_imgs
