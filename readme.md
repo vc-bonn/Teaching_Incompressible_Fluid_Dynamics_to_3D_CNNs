@@ -24,6 +24,9 @@ If you first want to start with some 2D simulations, then the following paper mi
 [Learning Incompressible Fluid Dynamics from Scratch - Towards Fast, Differentiable Fluid Models that Generalize](https://arxiv.org/abs/2006.08762)  
 *Nils Wandel, Michael Weinmann, Reinhard Klein*, ICLR, 2021 ([Code](https://github.com/aschethor/Unsupervised_Deep_Learning_of_Incompressible_Fluid_Dynamics),[Video](https://www.youtube.com/watch?v=EU3YuUNVsXQ),[Spotlight presentation](https://www.youtube.com/watch?v=wIvFkhsIaRA))
 
+Recently, we proposed a continuous extension that makes use of Hermite-Splines:  
+[Spline-PINN: Approaching PDEs without Data using Fast, Physics-Informed Hermite-Spline CNNs](https://arxiv.org/abs/2109.07143)  
+*Nils Wandel, Michael Weinmann, Michael Neidlin, Reinhard Klein*, AAAI, 2022 ([Code](https://github.com/aschethor/Spline_PINN))
 
 ## Installation
 
@@ -112,6 +115,15 @@ Note, that the object geometry must be closed to make the script work properly. 
 ## License
 
 Feel free to clone this repository and modify it! If it's of good use for you, give it a star and please cite our publications!
+```
+@article{Wandel2021Teaching,
+	author = {Wandel, Nils and Weinmann, Michael and Klein, Reinhard},
+	series = {Physics of Fluids (AIP)},
+	year = {2021},
+	title = {Teaching the Incompressible Navier-Stokes Equations to Fast Neural Surrogate Models in 3D},
+	howpublished = {https://arxiv.org/abs/2012.11893},
+}
+```
 If there are questions left, just contact us: wandeln@cs.uni-bonn.de
 
 ## References
