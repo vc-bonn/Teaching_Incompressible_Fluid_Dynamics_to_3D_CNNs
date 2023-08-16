@@ -1149,8 +1149,8 @@ class Dataset:
 		if self.interactive:
 			self.mousev = min(max(self.mousev,-self.max_speed),self.max_speed)
 			self.mousew = min(max(self.mousew,-self.max_speed),self.max_speed)
-			self.mousemu[0] = min(max(self.mousemu,np.exp(self.mu_range[0])),np.exp(self.mu_range[1]))
-			self.mouserho[0] = min(max(self.mouserho,np.exp(self.rho_range[0])),np.exp(self.rho_range[1]))
+			self.mousemu[0] = min(max(self.mousemu.clone(),np.exp(self.mu_range[0])),np.exp(self.mu_range[1]))
+			self.mouserho[0] = min(max(self.mouserho.clone(),np.exp(self.rho_range[0])),np.exp(self.rho_range[1]))
 		
 		self.indices = np.random.choice(self.dataset_size,self.batch_size)
 		self.update_envs(self.indices)

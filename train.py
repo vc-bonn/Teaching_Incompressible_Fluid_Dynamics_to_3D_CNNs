@@ -83,9 +83,9 @@ for epoch in range(params.load_index,params.n_epochs):
 		if params.integrator == "imex":
 			v = (v_new+v_old)/2
 		
-		loss_nav =  torch.mean(loss_function(flow_mask_mac*(rho*((v_new[:,0:1]-v_old[:,0:1])/params.dt+v[:,0:1]*d.dx(v[:,0:1])+0.5*(d.map_vy2vx_p(v[:,1:2])*d.dy_p(v[:,0:1])+d.map_vy2vx_m(v[:,1:2])*d.dy_m(v[:,0:1]))+0.5*(d.map_vz2vx_p(v[:,2:3])*d.dz_p(v[:,0:1])+d.map_vz2vx_m(v[:,2:3])*d.dz_m(v[:,0:1])))+d.dx_m(p_new)-mu*d.laplace(v[:,0:1])))[:,:,1:-1,1:-1,1:-1],dim=(1,2,3,4))+\
-					torch.mean(loss_function(flow_mask_mac*(rho*((v_new[:,1:2]-v_old[:,1:2])/params.dt+v[:,1:2]*d.dy(v[:,1:2])+0.5*(d.map_vx2vy_p(v[:,0:1])*d.dx_p(v[:,1:2])+d.map_vx2vy_m(v[:,0:1])*d.dx_m(v[:,1:2]))+0.5*(d.map_vz2vy_p(v[:,2:3])*d.dz_p(v[:,1:2])+d.map_vz2vy_m(v[:,2:3])*d.dz_m(v[:,1:2])))+d.dy_m(p_new)-mu*d.laplace(v[:,1:2])))[:,:,1:-1,1:-1,1:-1],dim=(1,2,3,4))+\
-					torch.mean(loss_function(flow_mask_mac*(rho*((v_new[:,2:3]-v_old[:,2:3])/params.dt+v[:,2:3]*d.dz(v[:,2:3])+0.5*(d.map_vx2vz_p(v[:,0:1])*d.dx_p(v[:,2:3])+d.map_vx2vz_m(v[:,0:1])*d.dx_m(v[:,2:3]))+0.5*(d.map_vy2vz_p(v[:,1:2])*d.dy_p(v[:,2:3])+d.map_vy2vz_m(v[:,1:2])*d.dy_m(v[:,2:3])))+d.dz_m(p_new)-mu*d.laplace(v[:,2:3])))[:,:,1:-1,1:-1,1:-1],dim=(1,2,3,4))
+		loss_nav =  torch.mean(loss_function(flow_mask_mac[:,0:1]*(rho*((v_new[:,0:1]-v_old[:,0:1])/params.dt+v[:,0:1]*d.dx(v[:,0:1])+0.5*(d.map_vy2vx_p(v[:,1:2])*d.dy_p(v[:,0:1])+d.map_vy2vx_m(v[:,1:2])*d.dy_m(v[:,0:1]))+0.5*(d.map_vz2vx_p(v[:,2:3])*d.dz_p(v[:,0:1])+d.map_vz2vx_m(v[:,2:3])*d.dz_m(v[:,0:1])))+d.dx_m(p_new)-mu*d.laplace(v[:,0:1])))[:,:,1:-1,1:-1,1:-1],dim=(1,2,3,4))+\
+					torch.mean(loss_function(flow_mask_mac[:,1:2]*(rho*((v_new[:,1:2]-v_old[:,1:2])/params.dt+v[:,1:2]*d.dy(v[:,1:2])+0.5*(d.map_vx2vy_p(v[:,0:1])*d.dx_p(v[:,1:2])+d.map_vx2vy_m(v[:,0:1])*d.dx_m(v[:,1:2]))+0.5*(d.map_vz2vy_p(v[:,2:3])*d.dz_p(v[:,1:2])+d.map_vz2vy_m(v[:,2:3])*d.dz_m(v[:,1:2])))+d.dy_m(p_new)-mu*d.laplace(v[:,1:2])))[:,:,1:-1,1:-1,1:-1],dim=(1,2,3,4))+\
+					torch.mean(loss_function(flow_mask_mac[:,2:3]*(rho*((v_new[:,2:3]-v_old[:,2:3])/params.dt+v[:,2:3]*d.dz(v[:,2:3])+0.5*(d.map_vx2vz_p(v[:,0:1])*d.dx_p(v[:,2:3])+d.map_vx2vz_m(v[:,0:1])*d.dx_m(v[:,2:3]))+0.5*(d.map_vy2vz_p(v[:,1:2])*d.dy_p(v[:,2:3])+d.map_vy2vz_m(v[:,1:2])*d.dy_m(v[:,2:3])))+d.dz_m(p_new)-mu*d.laplace(v[:,2:3])))[:,:,1:-1,1:-1,1:-1],dim=(1,2,3,4))
 		
 		# combine loss terms for boundary conditions / Navier Stokes equations
 		loss = params.loss_bound*loss_bound + params.loss_nav*loss_nav
