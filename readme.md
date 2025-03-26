@@ -59,8 +59,8 @@ To start the interactive demo using the pretrained pruned U-Net, run:
 python demo_interactive.py --dt=4 --net=pruned_UNet
 ```
 
-If you want to use our pretrained, more accurate "full" U-Net (which was used to produce the results shown above), you first need to download the model from [Google Drive](https://drive.google.com/file/d/1HUYiye1SEc0anrTUDLyfJOT6R7sh92UA/view?usp=sharing) since the model is larger then 100 MiB and thus cannot be uploaded on GitHub. Then, copy the .state-file into the following folder:  
-/Logger/net UNet; hs 15; dt 4.0/2021-01-28 17:26:17/states/  
+If you want to use our pretrained, more accurate "full" U-Net (which was used to produce the results shown above), you first need to download the model from [Sciebo](https://uni-bonn.sciebo.de/s/LtxV4VIVXQmBDIK) since the model is larger then 100 MiB and thus cannot be uploaded on GitHub. Then, copy the .state-file into the following folder:  
+/Logger/net UNet; hs 15; dt 4.0;/2021-01-28 17:26:17/states/  
 ... and run:  
 ```
 python demo_interactive.py --dt=4 --net=UNet
